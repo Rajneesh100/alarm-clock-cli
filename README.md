@@ -27,25 +27,25 @@ Here is a visual map of how functions in each module call each other:
 ```mermaid
 graph TD
     %% Main Entry
-    subgraph CLI Entry (main.py)
+    subgraph "CLI Entry (main.py)"
         M[main]
     end
 
     %% Business Logic
-    subgraph Business Logic (manager.py)
+    subgraph "Business Logic (manager.py)"
         A[add_alarm]
         L[list_alarms]
         D[delete_alarm]
     end
 
     %% Storage Logic
-    subgraph Data Access (storage.py)
+    subgraph "Data Access (storage.py)"
         LA[load_alarms]
         SA[save_alarms]
     end
 
     %% Daemon Logic
-    subgraph Alarm Monitor (runner.py)
+    subgraph "Alarm Monitor (runner.py)"
         R[run_loop]
         C[check_alarms]
     end
